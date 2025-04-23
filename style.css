@@ -1296,3 +1296,42 @@ body {
     transform: translate(-50%, -50%) perspective(800px) rotateX(0deg) scale(1);
   }
 }
+@media screen and (max-width: 480px) {
+  #game-title.game-header {
+    padding: 8px 10px;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  .header-left,
+  .header-right {
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+  }
+
+  .header-title,
+  .game-title {
+    font-size: 1.6rem;
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+
+  .icon-btn,
+  .btn {
+    padding: 4px 6px;
+    font-size: 13px;
+  }
+
+  .info {
+    font-size: 13px;
+    padding: 2px 6px;
+  }
+
+  #grid-container {
+    width: 95vmin;
+    height: 95vmin;
+    gap: 4px;
+  }
+}

@@ -73,17 +73,19 @@ export function createGrid(gridSize, level = 1) {
   const numberOfPairs = Math.floor(totalTiles / 2);
 
   // Tạo danh sách ảnh từ 1–72 và xáo trộn
-  const availableImages = Array.from({ length: MAX_IMAGE_ID }, (_, i) => i + 1);
+  // ✅ Tự động xác định số lượng ảnh theo cấp độ
+  const totalAvailableImages = level <= 12 ? 72 : 1000;
+  const availableImages = Array.from({ length: totalAvailableImages }, (_, i) => i + 1);
   shuffleArray(availableImages);
 
-  // Chọn ảnh không trùng → mỗi ảnh dùng đúng 2 lần
+  // ✅ Chọn ảnh không trùng → mỗi ảnh dùng đúng 2 lần
   const selectedImages = availableImages.slice(0, numberOfPairs);
   let imageIds = [];
   selectedImages.forEach((id) => {
     imageIds.push(id, id);
   });
 
-  // Nếu số ô là lẻ → thêm 1 ô lẻ bonus
+  // ✅ Nếu số ô là lẻ → thêm 1 ô lẻ bonus
   let bonusImageId = null;
   let bonusTileIndex = null;
 
@@ -92,7 +94,7 @@ export function createGrid(gridSize, level = 1) {
     imageIds.push(bonusImageId);
   }
 
-  // Trộn mảng ảnh cuối cùng
+  // 🔀 Trộn mảng ảnh cuối cùng
   shuffleArray(imageIds);
 
   // Chuẩn bị DOM
@@ -114,7 +116,8 @@ export function createGrid(gridSize, level = 1) {
     tile.id = tileId;
 
     const img = document.createElement('img');
-    img.src = `assets/images/level${level}/Pikachu (${imageId}).png`;
+    const imageLevel = level <= 12 ? level : 13;
+    img.src = `assets/images/level${imageLevel}/Pikachu (${imageId}).png`;
     img.alt = `Pikachu ${imageId}`;
     img.draggable = false;
     img.classList.add('hidden');

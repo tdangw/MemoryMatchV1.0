@@ -19,7 +19,7 @@ function setupVersionInfo() {
     <li>🖼️ Khắc phục hình ảnh vừa với title</li>
     <li>🖱️ Hiệu ứng click</li>
     <li>🎮 Menu chọn chế độ chơi</li>
-    <li>✨ Thêm hiệu ứng cộng điểm tại ô thứ 2</li>
+    <li>✨ Thêm hiệu ứng cộng điểm</li>
     <li>⚡ Tối ưu game mượt hơn</li>
   </ul>
   <button class="settings-btn" style="margin-top: 10px;">Đóng</button>
