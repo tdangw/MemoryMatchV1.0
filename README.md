@@ -76,3 +76,5 @@
 - Menu chọn chế độ chơi
 - Thêm hiệu ứng cộng điểm khi match
 - Thêm mô tả phiên bản ở góc dưới bên phải
+- Thêm Shop
+"# MemoryMatchV1.1" 
